@@ -1,18 +1,27 @@
+import Link from 'next/link'
+import React from 'react'
 import { mutate } from 'swr'
 
 import Layout from '../../components/Layout'
 import useApi from '../../hooks/useApi'
+import { Fruit } from '../../interfaces'
 
 const FruitList = () => {
-  const { data } = useApi<Array<{ name: string }>>('/api/fruits')
+  const { data } = useApi<Array<Fruit>>('/api/fruits')
 
   if (!data) {
     return <></>
   }
   return (
     <ul>
-      {data.map((d, i) => {
-        return <li key={i}>{d.name}</li>
+      {data.map((d) => {
+        return (
+          <li key={d.id}>
+            <Link href={`/fruits/${d.id}`}>
+              <a>{d.name}</a>
+            </Link>
+          </li>
+        )
       })}
     </ul>
   )
