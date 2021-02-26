@@ -7,7 +7,15 @@
     "start": "next start",
     "deploy": "vercel",
     "deploy:prod": "vercel --prod",
-    "type-check": "tsc"
+    "type-check": "tsc",
+    "lint": "eslint --ext .js,.jsx,.ts,.tsx .",
+    "lint:fix": "eslint --ext .js,.jsx,.ts,.tsx --fix .",
+    "pretty-quick": "pretty-quick --staged"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run pretty-quick"
+    }
   },
   "dependencies": {
     "next": "latest",
@@ -18,6 +26,19 @@
     "@types/node": "^12.12.21",
     "@types/react": "^16.9.16",
     "@types/react-dom": "^16.9.4",
+    "@typescript-eslint/eslint-plugin": "^4.15.2",
+    "@typescript-eslint/parser": "^4.15.2",
+    "eslint": "^7.20.0",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-import-resolver-typescript": "^2.4.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^3.3.1",
+    "eslint-plugin-react": "^7.22.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "husky": "^5.1.1",
+    "prettier": "^2.2.1",
+    "pretty-quick": "^3.1.0",
     "typescript": "4.0",
     "vercel": "^21.3.0"
   },

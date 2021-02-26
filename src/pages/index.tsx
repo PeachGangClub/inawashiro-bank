@@ -11,7 +11,7 @@ const IndexPage = () => (
     </p>
     <style jsx>{`
       .title {
-        color: ${'pink'}
+        color: ${'pink'};
       }
     `}</style>
   </Layout>
