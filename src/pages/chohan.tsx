@@ -44,10 +44,10 @@ const ChohanPage = () => {
             )}
           </div>
           <p>
-            <button disabled={loading} onClick={handleClickButton('cho')}>
+            <button className="button" disabled={loading} onClick={handleClickButton('cho')}>
               丁
             </button>
-            <button disabled={loading} onClick={handleClickButton('han')}>
+            <button className="button" disabled={loading} onClick={handleClickButton('han')}>
               半
             </button>
           </p>
@@ -55,6 +55,16 @@ const ChohanPage = () => {
       ) : (
         <p>ログインしてね。</p>
       )}
+      <style jsx>{`
+        .button {
+          display: inline-block;
+          border: 1px solid #aaa;
+          border-radius: 8px;
+          padding: 8px 24px;
+          margin: 0 4px;
+          background-color: #fff;
+        }
+      `}</style>
     </Layout>
   )
 }
