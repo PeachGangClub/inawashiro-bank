@@ -50,6 +50,10 @@ const Layout = ({ children, title = 'This is the default title' }: Props) => {
           <Link href="/ranking">
             <a>資産ランキング</a>
           </Link>
+          |{' '}
+          <Link href="/chohan">
+            <a>丁半博打</a>
+          </Link>
         </nav>
       </header>
       {children}
