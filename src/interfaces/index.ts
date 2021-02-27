@@ -4,6 +4,13 @@
 //
 // import { User } from 'path/to/interfaces';
 
+export type MyUser = {
+  id: string
+  name: string
+  image: string
+  hyc: number
+}
+
 export type User = {
   id: number
   name: string

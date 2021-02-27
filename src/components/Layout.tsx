@@ -2,7 +2,7 @@ import React, { ReactNode } from 'react'
 import Link from 'next/link'
 import Head from 'next/head'
 import SignInWithTwitterButton from './SignInWithTwitterButton'
-import { useSession } from 'next-auth/client'
+import useMyUser from '../hooks/useMyUser'
 
 type Props = {
   children?: ReactNode
@@ -10,7 +10,7 @@ type Props = {
 }
 
 const Layout = ({ children, title = 'This is the default title' }: Props) => {
-  const [session] = useSession()
+  const [myUser] = useMyUser()
   return (
     <div>
       <Head>
@@ -19,12 +19,14 @@ const Layout = ({ children, title = 'This is the default title' }: Props) => {
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <header>
-        <SignInWithTwitterButton signedIn={!session} />
+        <SignInWithTwitterButton signedIn={!myUser} />
         <div>
-          {session && (
+          {myUser && (
             <div>
-              <img src={session.user.image ?? ''} width="48" height="48" />
-              {session.user.name}
+              <img src={myUser.image ?? ''} width="48" height="48" />
+              {myUser.name}
+              <br />
+              所持HYC: {myUser.hyc}
             </div>
           )}
         </div>
