@@ -20,7 +20,7 @@ const Ranking = ({}: Props) => {
       {data.map((item) => {
         return (
           <p key={item.id}>
-            <span style={{ fontSize: 70 }}>{item.name}</span>
+            <span style={{ fontSize: 20 }}>{item.name}</span>
             <span>{item.asset}</span>
           </p>
         )
