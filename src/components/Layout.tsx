@@ -44,6 +44,10 @@ const Layout = ({ children, title = 'This is the default title' }: Props) => {
           <Link href="/fruits">
             <a>フルーツリスト</a>
           </Link>
+          |{' '}
+          <Link href="/ranking">
+            <a>資産ランキング</a>
+          </Link>
         </nav>
       </header>
       {children}
